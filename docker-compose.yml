@@ -1,0 +1,20 @@
+version: "3.8"
+networks:
+    default:
+        name: cinns_network_base
+        external: true
+services:
+    cinns_network_base:
+        image: cinns_network_base
+        container_name: cinns_network_base
+        volumes:
+            - ../data:/data
+            - ../CINNS:/app 
+        # environment:
+        #     GOOGLE_APPLICATION_CREDENTIALS: /secrets/secret-heaven-312408-d2eb79bdeadd.json
+        #     GCP_PROJECT: "secret-heaven-312408"
+        #     GCP_ZONE: "us-central1-a"
+        #     GCS_BUCKET_NAME: "ai5_nasa_ads_data"
+        #     LABEL_STUDIO_URL: "http://data-label-studio:8080"
+        # depends_on:
+        #     - data-label-studio
